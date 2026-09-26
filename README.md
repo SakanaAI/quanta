@@ -1,6 +1,6 @@
 # Quanta
 
-This repository contains an anonymous implementation of a functional view of learning dynamics in which reusable computations are acquired in an ordered, input-selective way. It provides the models, controlled Hierarchical Sparse Parity experiments, NumberNaming Q-discovery pipeline, and Q-alignment experiments used to test loss decomposition, resource scaling, executable recovery, and steering while keeping experiment logic and saved-artifact contracts explicit.
+This repository contains the code for the paper "Neural Dynamics as the Composition of Quantized Units". We experiment with a discrete approximation of learning dynamics in which reusable computations are acquired in an ordered, input-selective way. It provides the models, controlled Hierarchical Sparse Parity experiments, NumberNaming Q-discovery pipeline, and Q-alignment experiments used to test loss decomposition, resource scaling, executable recovery, and steering while keeping experiment logic and saved-artifact contracts explicit.
 
 ## Repository structure
 
