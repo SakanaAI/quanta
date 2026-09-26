@@ -1,0 +1,44 @@
+model:
+  max_seq_len: 20
+  compiled_program_path: .artifacts/number_naming_qprogram/factorized-ec2b804b2bd4-70797a50-22a1f943
+  d_source: 32
+  d_quantum: 32
+  read_heads: 1
+  quantum_mlp_ratio: 1
+  activation: gelu
+  add_initial_state: true
+  all_quanta_output: false
+
+task:
+  name: number_naming
+  language: english
+  data_splits: extreme_generalization_v2
+
+  max_number: 999_999
+  training_size: 300
+  eval_size: 16384
+
+  eval_strategy: balanced
+  eval_samples: null
+  eval_samples_per_digit: null
+
+training:
+  lr: 1.0e-2
+  scheduler: linear_after_plateau
+  plateau_phase: 0.5
+  warmup_phase: 0.0
+  weight_decay: 1.0e-3
+
+  epochs: 1000
+  eval_steps: 20
+  full_eval_steps: 20
+  parent_audit_size: 0
+  eval_batch_size: 4096
+  batch_size: 300
+
+  activity_weight: 2.0
+  semantic_weight: 1.0
+  max_supervised_classes: 20
+
+  seed: 0
+  wandb_project: null

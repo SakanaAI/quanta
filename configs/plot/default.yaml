@@ -1,0 +1,22 @@
+common:
+  smoothing: 0.1
+  x_scale: linear
+  x_axis: steps
+  x_start: 10
+  x_lim: null
+  ylim: null
+  record_train_loss: false
+  plot_total_loss: true
+  save_pdf: false
+
+scaling_laws:
+  loss_decomposition: tasks
+  weighted_loss: true
+  output_filename: scaling_law.png
+  loss_decomposition_filename: loss_decomposition.png
+
+quanta_net:
+  output_filename: metrics.png
+
+quanta_steering:
+  output_filename: metrics.png

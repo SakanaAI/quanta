@@ -1,0 +1,44 @@
+model:
+  architecture: transformer
+  width: 32
+  depth: 2
+  n_heads: 1
+  mlp_ratio: 1
+  dropout: 0.0
+
+task:
+  name: cnand
+  task_bits: [-1, 1]
+  base_freq: 1.0
+  base_tasks: 16
+  max_depth: 0
+  m: 2
+  n_local_bits: 4
+
+experiment:
+  rho_beta_delta: [[2.0, 2.0, 0.0]]
+  graph_family: flat_roots
+  # The graph seed permutes frequency ranks over fixed local functions.
+  flat_frequency_exponent: 1.0
+  quanta_demand: shortcut
+  trace_sampling: principal
+  attention_masking: none
+  n_lut_functions: -1
+  lut_family: symmetry_orbit
+  function_seed: 0
+  exhaustive_local_eval: true
+  seed: [0, 1, 2]
+  eval_seed: 10000
+  run_tag: loss-decomposition
+
+training:
+  steps: 3044
+  batch_size: 512
+  eval_samples_per_task: 16
+  lr: [0.0004]
+  scheduler: constant
+  warmup_phase: 0.0
+  weight_decay: 0.0
+  eval_steps: 5
+  save_steps: 500
+  wandb_project: null

@@ -1,0 +1,41 @@
+model:
+  max_seq_len: 20
+  q_checkpoint: .experiments/quanta_net/teacher/model.pt
+  transformer_d_model: 32
+  transformer_layers: 10
+  transformer_heads: 1
+  transformer_mlp_ratio: 2.0
+  transformer_dropout: 0.0
+  interface_seed: 0
+
+task:
+  name: number_naming
+  language: english
+  data_splits: extreme_generalization_v2
+  max_number: 999_999
+  training_size: 300
+  eval_size: 16384
+  eval_strategy: balanced
+  eval_samples: null
+  eval_samples_per_digit: null
+
+training:
+  lr: 1.0e-2
+  scheduler: linear_after_plateau
+  warmup_phase: 0.5
+  plateau_phase: 0.0
+  weight_decay: 1.0e-3
+  epochs: 1000
+  eval_steps: 10
+  eval_batch_size: 16384
+  batch_size: 300
+  lambda_align: 1.0
+  alignment_scale_mode: unit
+  alignment_scales: null
+  alignment_scale_epsilon: 1.0e-8
+  alignment_target_control: normal
+  control_seed: 0
+  minimum_oracle_token_accuracy: 0.99
+  minimum_oracle_exact_accuracy: 0.96
+  seed: 0
+  wandb_project: null

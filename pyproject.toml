@@ -1,0 +1,40 @@
+[project]
+name = "quanta"
+version = "0.1.0"
+description = "Research code for learning dynamics as ordered compositions of quantized functional units"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "accelerate>=1.12.0",
+    "matplotlib>=3.10.0",
+    "mermaid-py>=0.8.4",
+    "mup>=1.0.0",
+    "numpy>=2.4.6",
+    "pillow>=10.0.0",
+    "pyyaml>=6.0.3",
+    "scipy>=1.16.0",
+    "torch>=2.12.0",
+    "tqdm>=4.67.3",
+    "wandb>=0.27.0",
+]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["quanta*"]
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+quanta = { workspace = true, editable = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]
