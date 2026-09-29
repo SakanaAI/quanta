@@ -41,3 +41,8 @@ uv run python -m scripts.reproduce_q_steering --device cuda
 ```
 
 Outputs, including resolved configurations, status files, summaries, trajectories, and checkpoints, are saved under `.experiments/`.
+
+## Paper
+
+Jacopo Minniti, Aravinth Kulanthaivelu, Richard Sproat. 2026. "Neural Dynamics
+as the Composition of Quantized Units". https://arxiv.org/abs/2609.32487.
