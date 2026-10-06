@@ -117,7 +117,7 @@ class ScalingLawsExperiment(Experiment):
                         int(job["width"]),
                         float(job["lr"]),
                     )
-                    for job in all_jobs
+                    for job in jobs
                 }
                 missing_variants = expected_variants - completed_variants
 
